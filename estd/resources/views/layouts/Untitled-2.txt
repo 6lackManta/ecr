@@ -1,0 +1,37 @@
+ <nav class="nav has-shadow">
+            <div class="container">
+                <div class="nav-left">
+                        <a class="nav-item" href="{{ route('home') }}">
+                        <img src="{{ asset('images/logo.png') }}" alt="logs">
+                        </a>
+                        <a href="" class="nav-item is-tab is-hidden-mobile m-l-10"> Learn</a>
+                        <a href="" class="nav-item is-tab is-hidden-mobile">Discuss</a>
+                        <a href="" class="nav-item is-tab is-hidden-mobile">Share</a>
+                </div>
+                <div class="nav-right">
+
+                    @if (Auth::guest() )
+                    <a href="#" class="nav-item is-tab">Login</a>
+                    <a href="#" class="nav-item is-tab">Signup</a>
+                    @else
+                    <button class="dropdown nav-item is-tab">
+                        Hey Awais!! <span> <i class="icon fa-caret-down"></i> </span>
+                        <ul class="dropdown-menu">
+                        <li> <a href="#"> Profile </a></li>
+                        <li> <a href="#"></a> Notifications  </li>
+                        <li> <a href="#"></a> Settings</li>
+                        <li class="seperator"></li>
+                        <li> <a href="#">Logout</a></li>
+                        </ul>
+                    </button>
+                    @endif
+
+                </div>
+            </div>
+        </nav>
+
+if things are not looking similar to this you can change your code according to the new bulma update nav classes, as follows.
+replace nav with navbar
+nav-item with navbar-item
+nav-left with navbar-start
+nav-right with navbar-end
